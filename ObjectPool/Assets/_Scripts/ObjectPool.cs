@@ -27,8 +27,8 @@ namespace _Scripts
                 AddToPool();
             }
         }
-        
-        public void AddToPool()
+
+        private void AddToPool()
         {
             var obj = GameObject.Instantiate(_objectPrefab, _objectParent.transform);
             obj.name = $"{typeof(T).Name}";
@@ -37,7 +37,7 @@ namespace _Scripts
             Debug.Log($"Current {typeof(T).Name}pool count:{_pool.Count}");
         }
         
-        public void RemoveFromPool()
+        public void ClearPoolToPoolSize()
         {
             if (CheckPoolIsOutLimit())
             {
